@@ -1,0 +1,15 @@
+
+<div class="info">
+        <h1  *ngIf="!this.productsService.numberLike">Ձեզ  դուր  եկած սարքավորոմներ դեռ  չկան </h1>
+        <h1 *ngIf="this.productsService.numberLike">Հավանած սարքավորոմների  քանակը {{this.productsService.numberLike}}</h1>
+        <h1 *ngIf="this.productsService.priceLike">Հավանած արքավորոմների ընդհանուր գումարը կազմում է {{this.productsService.priceLike}} $ </h1>
+        <button routerLink="/shoppingCart" (click)="addShoping()" *ngIf="this.productsService.priceLike">Բոլոր հավանած   սարքավորոմները  ավելացնել  զամբյուղի մեջ</button>
+        </div>
+        <div class="main">
+            
+          <div class="content">
+             
+              <app-product-card *ngFor="let cards of product" [card]='cards'></app-product-card>
+          </div>
+          </div>
+          

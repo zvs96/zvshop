@@ -1,0 +1,16 @@
+
+
+<div class="info">
+<h1  *ngIf="!this.productsService.numberShopping">Ընտրված սարքավորոմներ դեռ  չկան </h1>
+<h1 *ngIf="this.productsService.numberShopping">Ընտրված  սարքավորոմների  քանակը {{this.productsService.numberShopping}}</h1>
+<h1 *ngIf="this.productsService.priceShopping">Ընդհանոր գումար կազմում է {{this.productsService.priceShopping}} $ </h1>
+<button *ngIf="this.productsService.priceShopping">Կատարել վճարում</button>
+</div>
+<div class="main">
+    
+  <div class="content">
+     
+      <app-product-card *ngFor="let cards of product" [card]='cards'></app-product-card>
+  </div>
+  </div>
+  

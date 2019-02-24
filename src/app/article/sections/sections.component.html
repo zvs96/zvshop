@@ -1,0 +1,40 @@
+<div class="content">
+  <a class="sectionUrls" routerLink="/mobile">
+    <span>
+        <i class="material-icons">
+            smartphone
+        </i>
+    </span>
+    <h5 class="sectionsName">Mobile</h5>
+  </a>
+  <a class="sectionUrls" routerLink="/tablet">
+    <span>
+        <i class="material-icons">
+            tablet_mac
+        </i>    
+    </span>
+    <h5 class="sectionsName">Tablets</h5>
+  </a>
+  <a class="sectionUrls" routerLink="/accessories">
+    <span>
+        <i class="material-icons">
+            headset
+        </i>    
+    </span>
+    <h5 class="sectionsName">Accessories</h5>
+  </a>
+</div>
+
+<div class="products">
+  <app-product-card *ngFor="let cards of product[0]" [card]='cards'></app-product-card>
+  <app-product-card *ngFor="let cards of product[1]" [card]='cards'></app-product-card>
+  <app-product-card *ngFor="let cards of product[2]" [card]='cards'></app-product-card>
+
+<h1 style="text-align: center;padding: 40px;width: 100%;">Most Popular<br>
+<hr style="width: 30%;text-align: center"></h1>
+<app-product-card  [card]='product[0][0]'></app-product-card>
+<app-product-card  [card]='product[1][0]'></app-product-card>
+<app-product-card  [card]='product[2][0]'></app-product-card>
+</div>
+<!-- <app-contacts></app-contacts>
+<app-about></app-about> -->

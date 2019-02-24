@@ -1,0 +1,26 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<div class="content" [@startCard]>
+<div id="make-3D-space">
+    <div id="product-card">
+            <img style="width: 230px;min-height: 300px;max-height: 400px;" src='{{ card.img }}' alt="" />
+            <div class="image_overlay"></div>
+            <div id="view_details" [routerLink]="['/product/{card.company + card.model}']" [queryParams]="card" >More</div>
+            <div class="stats">        	
+                <div class="stats-container">
+                    <span class="product_price">{{ card.price }}</span>
+                    <span class="product_name">{{ card.company }}</span>    
+                    <p>{{ card.model }}</p>                                            
+                    <div class="product-options">
+                    <div class="clear"></div>
+                      <div class="productInfo">
+                        <a [ngStyle]="{'background':shopping_cartColor}" (click)="shopping_cart()" ><img class="info"  src="../../assets/images/shopping-cart.png" alt=""></a>
+                        <a [ngStyle]="{'background':compareColor}"  (click)="compare()" ><img class="info"  src="../../assets/images/compare.png" alt=""></a>
+                        <a  [ngStyle]="{'background':likeColor}"  (click)="like()" ><img class="info"  src="../../assets/images/like.png" alt=""></a>
+                       
+                      </div>
+                </div>                       
+            </div>
+    </div>	
+</div>	 
+</div>

@@ -1,0 +1,54 @@
+.main { 
+    margin-top:10vh;
+    min-height: 60vh;    
+    display: flex;
+    justify-content: flex-start;
+}
+.info{
+    margin-top:10vh;
+    margin-left: 1vw;
+}
+.info button{
+    width: 355px;
+    font-size: 20px;
+    background: #475498;
+    color:white;
+    padding:5px;
+    border-radius: 5%;
+    cursor: pointer;
+   
+}
+.info button:hover{
+    background:#011992 ;
+    
+}
+
+.info h1{ 
+    
+    font-size: 20px;
+    color:#475498;
+}
+
+.content {
+    margin-top: 2vh;
+    width: 80%;
+    z-index: 0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    position: relative;
+    margin: 0px auto;
+    height: auto;
+}
+
+@media(max-width:767px){
+    .content {
+        width: 90%;
+    }
+    .info button{
+        width: 98vw;
+    }
+        .info{
+            width: 98vw;
+        }
+}

@@ -1,0 +1,208 @@
+<div class="component">
+    <div class="pSection1">
+        <div class="pPhoto" [ngStyle]="{ 'background-image': 'url(' + card.img + ')'}"> </div>
+        <div class="pInfo">
+            <table>
+                <tr>
+                    <td><h2 style="font-weight: bold;" >{{ card.company }} {{ card.model }}</h2></td>
+                    <td class="pPrice">{{ card.price }}</td>
+                </tr>
+            </table>
+                
+
+            <table class="table" style="margin-top: 50px;">
+            <thead class="thead-light">
+            </thead>
+            <tbody>
+                <tr *ngIf="card.ram">
+                <th scope="row">RAM</th>
+                <td>{{ card.ram }}</td>
+                </tr>
+                <tr *ngIf="card.year">
+                <th scope="row">Announcement Year</th>
+                <td>{{ card.year }}</td>
+                </tr>
+                <tr *ngIf="card.screenResolution">
+                <th scope="row">Screen Resolution</th>
+                <td>{{ card.screenResolution }}</td>
+                </tr>
+                <tr *ngIf="card.screenSize">
+                <th scope="row">Screen Size</th>
+                <td>{{ card.screenSize }}</td>
+                </tr>
+                <tr *ngIf="card.colors">
+                <th scope="row">Colors</th>
+                <td>
+                    <i style="color:#000000" class="material-icons">lens</i>
+                    <i style="color:#808080" class="material-icons">lens</i>
+                    <i style="color:#551ABB" class="material-icons">lens</i>
+                    <i style="color:#ffd700" class="material-icons">lens</i>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="pSection2">
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">General</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="parent" *ngIf="card.version">
+                <th scope="row">Model</th>
+                <td>{{ card.version }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.year"> 
+                <th scope="row">Announcement Year</th>
+                <td>{{ card.year }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.os">
+                <th scope="row">Operation System</th>
+                <td>{{ card.os }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Display</th>
+            </tr>
+            <tr class="parent" *ngIf="card.screenType">
+                <th scope="row">Screen Type</th>
+                <td>{{ card.screenType }} </td>
+            </tr>
+            <tr class="parent" *ngIf="card.screenResolution">
+                <th scope="row">Screen Resolution</th>
+                <td>{{ card.screenResolution }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.screenSize">
+                <th scope="row">Screen Size</th>
+                <td>{{ card.screenSize }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Camera</th>
+            </tr>
+            <tr class="parent" *ngIf="card.frontCamera">
+                <th scope="row">Front Camera</th>
+                <td>{{ card.frontCamera }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.mainCamera">
+                <th scope="row">Main Camera</th>
+                <td>{{ card.mainCamera }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Memory & CPU</th>
+            </tr>
+            <tr class="parent" *ngIf="card.numberOfProcessorCores"> 
+                <th scope="row">Number of processor cores</th>
+                <td>{{ card.numberOfProcessorCores }} </td>
+            </tr>
+            <tr class="parent" *ngIf="card.cpu">
+                <th scope="row">CPU</th>
+                <td>{{ card.cpu }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.ram">
+                <th scope="row">RAM</th>
+                <td>{{ card.ram }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.memoryCardSlot">
+                <th scope="row">Memory Card Slot</th>
+                <td>{{ card.memoryCardSlot }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.memory">
+                <th scope="row">Memory</th>
+                <td>{{ card.memory }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Network</th>
+            </tr>
+            <tr class="parent" *ngIf="card.standartNetwork">
+                <th scope="row">Standart Network</th>
+                <td>{{ card.standartNetwork }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.accessToTheInternet">
+                <th scope="row">Access to the Internet</th>
+                <td>{{ card.accessToTheInternet }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.networkRangeLte4G">
+                <th scope="row">4G LTE Network range</th>
+                <td>{{ card.networkRangeLte4G }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.gps">
+                <th scope="row">GPS</th>
+                <td>{{ card.gps }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.bluetooth">
+                <th scope="row">Bluetooth</th>
+                <td>{{ card.bluetooth }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.wifiNetwork">
+                <th scope="row">WiFi Network</th>
+                <td>{{ card.wifiNetwork }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.network3G">
+                <th scope="row">3G Network</th>
+                <td>{{ card.network3G }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.nfc">
+                <th scope="row">NFC</th>
+                <td>{{ card.nfc }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.networkLte4G">
+                <th scope="row">4G LTE Network</th>
+                <td>{{ card.networkLte4G }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Power</th>
+            </tr>
+            <tr class="parent" *ngIf="card.charingConnectorType">
+                <th scope="row">Charing Connector Type</th>
+                <td>{{ card.charingConnectorType }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.talkTime">
+                <th scope="row">Talk Time</th>
+                <td>{{ card.talkTime }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.batteryType">
+                <th scope="row">Battery Type</th>
+                <td>{{ card.batteryType }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.batteryCapacity">
+                <th scope="row">Battery Capacity</th>
+                <td>{{ card.batteryCapacity }}</td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" *ngIf="card.year">Other</th>
+            </tr>
+            <tr class="parent" *ngIf="card.weight">
+                <th scope="row">Weight</th>
+                <td>{{ card.weight }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.thickness">
+                <th scope="row">Thickness</th>
+                <td>{{ card.thickness }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.height">
+                <th scope="row">Height</th>
+                <td>{{ card.height }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.width">
+                <th scope="row">Width</th>
+                <td>{{ card.width }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.audio">
+                <th scope="row">Audio</th>
+                <td>{{ card.audio }}</td>
+            </tr>
+            <tr class="parent" *ngIf="card.simCardQuantity">
+                <th scope="row">SIM Card Quanitity</th>
+                <td>{{ card.simCardQuantity }}</td>
+            </tr>
+            
+        </tbody>
+        </table>
+    
+
+    </div>
+</div>

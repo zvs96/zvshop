@@ -1,0 +1,211 @@
+<div class="component">
+
+
+  <mat-vertical-stepper linear #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>General Information</ng-template>
+          <div class="example-container">
+              <mat-radio-group  [(ngModel)]="i" [ngModelOptions]="{standalone: true}" > 
+                  <span matPrefix>Type of Product &nbsp;</span>                  
+                <mat-radio-button value="0" checked=true  >Mobile</mat-radio-button>
+                <mat-radio-button value="1">Tablet</mat-radio-button>
+                <mat-radio-button value="2">Accessories</mat-radio-button>
+              </mat-radio-group>
+  
+              <image-upload></image-upload>
+           
+             
+                <mat-form-field class="example-full-width"> 
+                <mat-select placeholder="Company"   [(ngModel)]="company" formControlName="firstCtrl1" required>
+                  <mat-option></mat-option>
+                  <mat-option *ngFor="let company of companyList"  [value]="company">{{company}}</mat-option>
+                </mat-select>              
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Model"   [(ngModel)]="model" formControlName="firstCtrl2" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Price"    type="number"  [(ngModel)]="price" class="example-right-align" formControlName="firstCtrl3" required>
+                  <span matPrefix>$&nbsp;</span>
+                  <span matSuffix>.00</span>
+                </mat-form-field>
+              
+            </div>
+          <div>
+            <button mat-button matStepperNext  >Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" [optional]="!isOptional">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Characteristics</ng-template>
+          <div class="example-container">
+              <mat-form-field class="example-full-width">
+                <input matInput  placeholder="Model" [(ngModel)]="model" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <mat-select  placeholder="Announcement Year" [(ngModel)]="year" [ngModelOptions]="{standalone: true}">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let year of years" [value]="year">{{year}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <mat-select  placeholder="Operation System	" [(ngModel)]="os" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let os of opSystems"   [value]="os">{{os}}</mat-option>
+                  </mat-select>              
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Screen Type" 	 [(ngModel)]="screenType" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Screen Resolution" [(ngModel)]="screenResolution" [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" placeholder="Screen Size" [(ngModel)]="screenSize" [ngModelOptions]="{standalone: true}"  >
+                <span matSuffix>&nbsp; inch</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input type="number" class="example-right-align" matInput placeholder="Front Camera" [(ngModel)]="frontCamera" [ngModelOptions]="{standalone: true}">
+                <span matSuffix>&nbsp; MP</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input type="number" class="example-right-align" matInput placeholder="Main Camera" [(ngModel)]="mainCamera" [ngModelOptions]="{standalone: true}">
+                <span matSuffix>&nbsp; MP</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" placeholder="Number of processor cores	"  [(ngModel)]="numberOfProcessorCores" [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="CPU" [(ngModel)]="cpu" [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="RAM" [(ngModel)]="ram" [ngModelOptions]="{standalone: true}" >
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let ram of rams" [value]="ram">{{ram}}</mat-option>
+                </mat-select>
+                <span matSuffix>&nbsp; GB</span>
+              </mat-form-field>
+              <mat-radio-group [(ngModel)]="memoryCardSlot" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>Memory Card Slot	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Memory" [(ngModel)]="memory" [ngModelOptions]="{standalone: true}" >
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let memory of memoryList" [value]="memory">{{memory}}</mat-option>
+                    </mat-select>
+                    <span matSuffix>&nbsp; GB</span>
+                  </mat-form-field>
+              <mat-form-field  [(ngModel)]="accessToTheInternet" [ngModelOptions]="{standalone: true}">
+                  <mat-select placeholder="Access to the Internet"   [formControl]="accessInet" multiple>
+                    <mat-select-trigger>
+                      {{accessInet.value ? accessInet.value[0] : ''}}
+                      <span *ngIf="accessInet.value?.length > 1" class="example-additional-selection">
+                        (+{{accessInet.value.length - 1}} others)
+                      </span>
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let accessInet of accessInetList" [value]="accessInet" >{{accessInet}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="4G LTE Network range" [(ngModel)]="networkRangeLte4G" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <mat-radio-group [(ngModel)]="gps" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>GPS	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group  [(ngModel)]="bluetooth" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>Bluetooth	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group [(ngModel)]="wifiNetwork" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>WiFi Network	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group [(ngModel)]="network3G" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>3G Network	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group  [(ngModel)]="nfc" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>NFC	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group [(ngModel)]="networkLte4G" [ngModelOptions]="{standalone: true}"> 
+                <span matPrefix>4G LTE Network	&nbsp;</span>
+                <mat-radio-button value="yes" checked=true>Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field class="example-full-width">
+                <input matInput  [(ngModel)]="charingConnectorType" [ngModelOptions]="{standalone: true}" placeholder="Charing Connector Type" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="talkTime" [ngModelOptions]="{standalone: true}" placeholder="Talk Time" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="batteryType" [ngModelOptions]="{standalone: true}" placeholder="Battery Type" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" [(ngModel)]="batteryCapacity" [ngModelOptions]="{standalone: true}" placeholder="Battery Capacity	" >
+                <span matSuffix>&nbsp; mAh</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" [(ngModel)]="weight" [ngModelOptions]="{standalone: true}" placeholder="Weight	" >
+                <span matSuffix>&nbsp; g</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" [(ngModel)]="thickness" [ngModelOptions]="{standalone: true}" placeholder="Thickness	" >
+                <span matSuffix>&nbsp; mm</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" [(ngModel)]="height" [ngModelOptions]="{standalone: true}" placeholder="Height	" >
+                <span matSuffix>&nbsp; mm</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput type="number" class="example-right-align" [(ngModel)]="width" [ngModelOptions]="{standalone: true}" placeholder="Width	" >
+                <span matSuffix>&nbsp; mm</span>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Audio" [formControl]="audioL" multiple>
+                      <mat-select-trigger>
+                        {{audioL.value ? audioL.value[0] : ''}}
+                        <span *ngIf="audioL.value?.length > 1" class="example-additional-selection">
+                          (+{{audioL.value.length - 1}} others)
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let audioL of audioList" [value]="audioL">{{audioL}}</mat-option>
+                    </mat-select>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-select [(ngModel)]="simCardQuantity" [ngModelOptions]="{standalone: true}" placeholder="SIM Card Quanitity">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let sim of simCards" [value]="sim">{{sim}}</mat-option>
+                </mat-select>
+                <span matSuffix>&nbsp; SIM</span>
+              </mat-form-field>
+            </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="add()" >Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  
+  
+  </div> 
+  

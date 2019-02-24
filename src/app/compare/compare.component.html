@@ -1,0 +1,185 @@
+
+ <h1 *ngIf="!this.productsService.compare.length">Որպեսզի կարողանաք համեմատել պետք է ընտրեք  այն   սարքավորոմները  որոնք ցանկանում եք համեմատել</h1>
+<div class="main">
+   
+  <div class="content">
+      <app-product-card *ngFor="let cards of product" [card]='cards'></app-product-card>
+  </div>
+  </div>
+  
+  
+
+
+ 
+
+
+
+  <div class="component"  *ngIf="this.productsService.compare.length">
+
+
+
+
+   
+
+    <div class="pSection2">
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >General</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="parent" >
+                <th scope="row">Model</th>
+                <td  *ngFor="let card of product">{{ card.version }}   | </td>
+            </tr>
+            <tr class="parent" > 
+                <th scope="row">Announcement Year</th>
+                <td *ngFor="let card of product">{{ card.year }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Operation System</th>
+                <td *ngFor="let card of product">{{ card.os }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Display</th>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Screen Type</th>
+                <td *ngFor="let card of product">{{ card.screenType }}   |  </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Screen Resolution</th>
+                <td *ngFor="let card of product">{{ card.screenResolution }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Screen Size</th>
+                <td *ngFor="let card of product">{{ card.screenSize }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Camera</th>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Front Camera</th>
+                <td *ngFor="let card of product">{{ card.frontCamera }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Main Camera</th>
+                <td *ngFor="let card of product">{{ card.mainCamera }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Memory & CPU</th>
+            </tr>
+            <tr class="parent" > 
+                <th scope="row">Number of processor cores</th>
+                <td *ngFor="let card of product">{{ card.numberOfProcessorCores }}   |  </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">CPU</th>
+                <td *ngFor="let card of product">{{ card.cpu }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">RAM</th>
+                <td *ngFor="let card of product">{{ card.ram }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Memory Card Slot</th>
+                <td *ngFor="let card of product">{{ card.memoryCardSlot }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Memory</th>
+                <td *ngFor="let card of product">{{ card.memory }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Network</th>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Standart Network</th>
+                <td *ngFor="let card of product">{{ card.standartNetwork }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Access to the Internet</th>
+                <td *ngFor="let card of product">{{ card.accessToTheInternet }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">4G LTE Network range</th>
+                <td *ngFor="let card of product">{{ card.networkRangeLte4G }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">GPS</th>
+                <td *ngFor="let card of product">{{ card.gps }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Bluetooth</th>
+                <td *ngFor="let card of product">{{ card.bluetooth }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">WiFi Network</th>
+                <td *ngFor="let card of product">{{ card.wifiNetwork }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">3G Network</th>
+                <td *ngFor="let card of product">{{ card.network3G }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">NFC</th>
+                <td *ngFor="let card of product">{{ card.nfc }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">4G LTE Network</th>
+                <td *ngFor="let card of product">{{ card.networkLte4G }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Power</th>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Charing Connector Type</th>
+                <td>{{ card.charingConnectorType }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Talk Time</th>
+                <td *ngFor="let card of product">{{ card.talkTime }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Battery Type</th>
+                <td *ngFor="let card of product">{{ card.batteryType }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Battery Capacity</th>
+                <td *ngFor="let card of product">{{ card.batteryCapacity }}   | </td>
+            </tr>
+            <tr class="thead-dark">
+                <th scope="col" colspan="2" >Other</th>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Weight</th>
+                <td *ngFor="let card of product">{{ card.weight }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Thickness</th>
+                <td *ngFor="let card of product">{{ card.thickness }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Height</th>
+                <td *ngFor="let card of product">{{ card.height }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Width</th>
+                <td *ngFor="let card of product">{{ card.width }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">Audio</th>
+                <td *ngFor="let card of product">{{ card.audio }}   | </td>
+            </tr>
+            <tr class="parent" >
+                <th scope="row">SIM Card Quanitity</th>
+                <td *ngFor="let card of product">{{ card.simCardQuantity }}   | </td>
+            </tr>
+            
+        </tbody>
+        </table>
+    
+
+    </div>
+    </div>

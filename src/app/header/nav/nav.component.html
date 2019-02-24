@@ -1,0 +1,64 @@
+<div class="contentP" [@start]>
+<div class="content" id="nav">
+    <div class="logo">
+        <a routerLink="" (click)="onActivate($event)"><img id="logo" src="../../../assets/images/logo.png" alt=""></a>
+    </div>
+    <div class="menu" (click)="onActivate($event)">
+        <!-- <a class="navBar" routerLink="" >Home</a> -->
+        <!-- <a class="navBar" routerLink="/trend" >Trend</a> -->
+        <a class="navBar" routerLink="/mobile"  routerLinkActive="active-link" >Mobile</a>
+        <a class="navBar" routerLink="/tablet"  routerLinkActive="active-link">Tablet</a>
+        <a class="navBar" routerLink="/accessories"  routerLinkActive="active-link">Accessories</a>
+        <a class="navBar" routerLink="/contacts"  routerLinkActive="active-link">Contacts</a>
+        <a class="navBar" routerLink="/about" routerLinkActive="active-link" >About</a>
+        <a class="navBar" routerLink="/add"  routerLinkActive="active-link">Add</a>
+        <a class="navBar" routerLink="/shoppingCart"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/shopping-cart.png" alt=""></a>
+        <a class="navBar" routerLink="/compare"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/compare.png" alt=""></a>
+        <a class="navBar" routerLink="/like"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/like.png" alt=""></a>
+    </div> 
+    <div class="search">
+        <img id="logo" (click)="startSearch()" src="../../../assets/images/smartphone.png" alt="">
+        <form role="search">
+            <div class="search-control">
+                <input [@start3]='state1' type="search" id="site_search" name="q"
+                       placeholder="Search the site..."
+                       aria-label="Search through site content">
+               
+            </div>
+        </form>
+    </div>
+    
+    <div class="dropdown"   >
+
+        <div id="nav-icon" (click)="startAnime()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+    </div> 
+</div>
+
+<div>
+    <div (click)="startAnime()"  id="close"></div>
+    <div id="sabmenuP" (click)="onActivate($event)">
+    <div class="sabmenu" [@start2]='state' (click)="startAnime()" id="sabMenuId">
+        <a class="a2" routerLink="">Home</a>
+        <!-- <a class="a2" routerLink="/trend">Trend</a> -->
+        <a class="a2" routerLink="/shoppingCart"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/shopping-cart.png" alt=""></a>
+        <a class="a2" routerLink="/compare"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/compare.png" alt=""></a>
+        <a class="a2" routerLink="/like"  routerLinkActive="active-link"><img class="info"  src="../../assets/images/like.png" alt=""></a>
+        <a class="a2" routerLink="/mobile">Mobile</a>
+        <a class="a2" routerLink="/tablet">Tablets</a>
+        <a class="a2" routerLink="/accessories">Accessories</a>
+        <a class="a2" routerLink="/contacts">Contacts</a>
+        <a class="a2" routerLink="/about">About</a>
+    <div id="netWork">
+        <div id="sp"></div>
+        <div id="sp1"></div>
+        <div id="sp2"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
